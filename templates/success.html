@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Success</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gradient">
+  <main class="status-wrap">
+    <section class="status-card success">
+      <div class="status-icon">
+        <span class="checkmark"></span>
+      </div>
+      <h1>Logged in successfully</h1>
+      <p>Welcome{{ ' ' + request.args.get('u') if request.args.get('u') else '' }}. You’re all set.</p>
+
+      <div class="actions">
+        <a class="btn" href="{{ url_for('index') }}">Go back</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
